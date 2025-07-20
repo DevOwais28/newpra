@@ -177,15 +177,6 @@ const Gallery = () => {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
           <div className="flex justify-center mb-2 sm:mb-4">
-            <img 
-              src="https://img.icons8.com/color/96/000000/palette.png" 
-              alt="OrchidLogos" 
-              className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-white dark:bg-neutral-900 p-1 shadow"
-              onError={e => { 
-                e.target.onerror = null; 
-                e.target.src = 'https://img.icons8.com/color/96/000000/robot-3d.png'; 
-              }}
-            />
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-neutral-900 dark:text-neutral-100">
             Logo <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-blue-400 to-green-400">Gallery</span>
