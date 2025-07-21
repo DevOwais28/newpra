@@ -136,13 +136,13 @@ const Footer = () => {
                 Get the latest updates on new features and logo design trends.
               </p>
             </div>
-            <div className="flex w-full md:w-auto">
+            <div className="flex w-full flex-col md:flex-row md:w-auto gap-2 md:gap-0">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 md:w-64 px-4 py-3 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-neutral-900 dark:text-neutral-100 placeholder-neutral-400"
+                className="flex-1 w-full md:w-64 px-4 py-3 bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-t-lg md:rounded-l-lg md:rounded-t-none focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-neutral-900 dark:text-neutral-100 placeholder-neutral-400"
               />
-              <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium rounded-r-lg transition-colors duration-200">
+              <button className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-medium rounded-b-lg md:rounded-r-lg md:rounded-b-none transition-colors duration-200">
                 Subscribe
               </button>
             </div>
