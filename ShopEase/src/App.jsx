@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import AppIntroVideo from './components/AppIntroVideo'
 import HowItWorks from './components/HowItWorks'
 import Gallery from './components/Gallery'
 import Pricing from './components/Pricing'
@@ -54,6 +55,7 @@ function App() {
       <main className="flex flex-col items-center w-full px-2 sm:px-4">
         <div className="w-full max-w-7xl">
           <Hero />
+          <AppIntroVideo />
           <ProductOverviewSection />
           {/* Feature Highlights */}
           <FeatureSection

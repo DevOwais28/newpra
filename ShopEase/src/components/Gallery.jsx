@@ -1,18 +1,26 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-// Demo local SVGs/PNGs (replace with your own in src/assets/ for production)
-
+// More reliable image URLs with better fallbacks
 const vector3DImages = [
-  'https://img.icons8.com/color/100/000000/rocket.png',
-  'https://img.icons8.com/color/100/000000/lightbulb.png',
-  'https://img.icons8.com/color/100/000000/star.png',
-  'https://img.icons8.com/color/100/000000/heart.png',
-  'https://img.icons8.com/color/100/000000/diamond.png',
-  'https://img.icons8.com/color/100/000000/crown.png',
-  'https://img.icons8.com/color/100/000000/bolt.png',
-  'https://img.icons8.com/color/100/000000/leaf.png',
+  'https://cdn-icons-png.flaticon.com/512/3212/3212567.png', // Rocket
+  'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Lightbulb
+  'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Star
+  'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Heart
+  'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Diamond
+  'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Crown
+  'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Bolt
+  'https://cdn-icons-png.flaticon.com/512/1828/1828640.png', // Leaf
 ];
+
+// Fallback images for different categories
+const fallbackImages = {
+  tech: 'https://cdn-icons-png.flaticon.com/512/1828/1828640.png',
+  creative: 'https://cdn-icons-png.flaticon.com/512/1828/1828640.png',
+  business: 'https://cdn-icons-png.flaticon.com/512/1828/1828640.png',
+  health: 'https://cdn-icons-png.flaticon.com/512/1828/1828640.png',
+  default: 'https://cdn-icons-png.flaticon.com/512/1828/1828640.png'
+};
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -31,140 +39,160 @@ const Gallery = () => {
       title: 'TechFlow',
       description: 'Modern tech startup',
       category: 'tech',
-      style: 'minimal'
+      style: 'minimal',
+      icon: '🚀'
     },
     {
       id: 2,
       title: 'CreativeHub',
       description: 'Design agency',
       category: 'creative',
-      style: 'bold'
+      style: 'bold',
+      icon: '🎨'
     },
     {
       id: 3,
       title: 'BusinessPro',
       description: 'Corporate solutions',
       category: 'business',
-      style: 'professional'
+      style: 'professional',
+      icon: '⭐'
     },
     {
       id: 4,
       title: 'HealthCare+',
       description: 'Medical services',
       category: 'health',
-      style: 'clean'
+      style: 'clean',
+      icon: '💚'
     },
     {
       id: 5,
       title: 'DataSync',
       description: 'Data analytics',
       category: 'tech',
-      style: 'modern'
+      style: 'modern',
+      icon: '💎'
     },
     {
       id: 6,
       title: 'ArtStudio',
       description: 'Creative studio',
       category: 'creative',
-      style: 'artistic'
+      style: 'artistic',
+      icon: '👑'
     },
     {
       id: 7,
       title: 'FinanceFirst',
       description: 'Financial services',
       category: 'business',
-      style: 'trustworthy'
+      style: 'trustworthy',
+      icon: '⚡'
     },
     {
       id: 8,
       title: 'WellnessPro',
       description: 'Health & wellness',
       category: 'health',
-      style: 'organic'
+      style: 'organic',
+      icon: '🌿'
     },
     {
       id: 9,
       title: 'CloudTech',
       description: 'Cloud solutions',
       category: 'tech',
-      style: 'futuristic'
+      style: 'futuristic',
+      icon: '☁️'
     },
     {
       id: 10,
       title: 'DesignLab',
       description: 'Creative agency',
       category: 'creative',
-      style: 'innovative'
+      style: 'innovative',
+      icon: '🎯'
     },
     {
       id: 11,
       title: 'GlobalCorp',
       description: 'International business',
       category: 'business',
-      style: 'corporate'
+      style: 'corporate',
+      icon: '🌍'
     },
     {
       id: 12,
       title: 'MediCare',
       description: 'Healthcare provider',
       category: 'health',
-      style: 'caring'
+      style: 'caring',
+      icon: '🏥'
     },
     {
       id: 13,
       title: 'AI Solutions',
       description: 'Artificial intelligence',
       category: 'tech',
-      style: 'smart'
+      style: 'smart',
+      icon: '🤖'
     },
     {
       id: 14,
       title: 'PixelPerfect',
       description: 'Digital design',
       category: 'creative',
-      style: 'precise'
+      style: 'precise',
+      icon: '🎨'
     },
     {
       id: 15,
       title: 'EnterprisePlus',
       description: 'Enterprise solutions',
       category: 'business',
-      style: 'premium'
+      style: 'premium',
+      icon: '🏢'
     },
     {
       id: 16,
       title: 'VitalHealth',
       description: 'Health services',
       category: 'health',
-      style: 'vital'
+      style: 'vital',
+      icon: '💊'
     },
     {
       id: 17,
       title: 'CyberSec',
       description: 'Cybersecurity',
       category: 'tech',
-      style: 'secure'
+      style: 'secure',
+      icon: '🔒'
     },
     {
       id: 18,
       title: 'InnovateLab',
       description: 'Innovation hub',
       category: 'creative',
-      style: 'cutting-edge'
+      style: 'cutting-edge',
+      icon: '🔬'
     },
     {
       id: 19,
       title: 'MarketLeader',
       description: 'Market solutions',
       category: 'business',
-      style: 'leading'
+      style: 'leading',
+      icon: '📈'
     },
     {
       id: 20,
       title: 'LifeCare',
       description: 'Life sciences',
       category: 'health',
-      style: 'life-giving'
+      style: 'life-giving',
+      icon: '🧬'
     }
   ]
 
@@ -211,16 +239,9 @@ const Gallery = () => {
               whileHover={{ scale: 1.03 }}
               className="rounded-2xl bg-white/90 dark:bg-neutral-900/90 border border-neutral-200 dark:border-neutral-700 shadow-lg p-3 sm:p-4 flex flex-col items-center transition-all duration-300 min-h-[200px] sm:min-h-[240px] hover:shadow-xl"
             >
-              <img
-                src={vector3DImages[i % vector3DImages.length]}
-                alt={logo.title}
-                className="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-3 sm:mb-4 drop-shadow-xl bg-white dark:bg-neutral-900 rounded-xl p-2 border border-neutral-200 dark:border-neutral-700"
-                loading="lazy"
-                onError={e => { 
-                  e.target.onerror = null; 
-                  e.target.src = 'https://img.icons8.com/color/96/000000/robot-3d.png'; 
-                }}
-              />
+              <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center mb-3 sm:mb-4 bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 rounded-xl border border-neutral-200 dark:border-neutral-700 text-3xl sm:text-4xl">
+                {logo.icon}
+              </div>
               <h3 className="font-semibold text-base sm:text-lg text-neutral-900 dark:text-neutral-100 mb-1 text-center">
                 {logo.title}
               </h3>
